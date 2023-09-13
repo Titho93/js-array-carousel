@@ -13,12 +13,12 @@ const images  = [
 
 for (let i = 0; i < images.length; i++){
   const image = images[i];
-  imageCont.innerHTML += `<img src="${image}" class= hide item >`;
+  imageCont.innerHTML += `<img src="${image}" class= "item hide">`;
 }
 
 console.log(counterImg)
 
-const imageCollect = document.getElementsByClassName ('item');
+const imageCollect = document.getElementsByClassName('item');
 imageCollect[counterImg].classlist.remove('hide');
 
 
