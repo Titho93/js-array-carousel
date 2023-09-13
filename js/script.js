@@ -13,15 +13,21 @@ const images  = [
 
 for (let i = 0; i < images.length; i++){
   const image = images[i];
-  imageCont.innerHTML += `<img src="${image}" class= "item hide">`;
+  imageCont.innerHTML += `<img src="${image}" class="item hide">`;
 }
 
-console.log(counterImg)
-
 const imageCollect = document.getElementsByClassName('item');
-imageCollect[counterImg].classlist.remove('hide');
 
+imageCollect[counterImg].classList.remove('hide'); 
 
+btnNext.addEventListener('click', function(){
+  imageCollect[counterImg].classList.add('hide');
+  counterImg++;
+  imageCollect[counterImg].classList.remove('hide');
+})
 
-
-
+btnPrev.addEventListener('click', function(){
+  imageCollect[counterImg].classList.add('hide');
+  counterImg--;
+  imageCollect[counterImg].classList.remove('hide');
+})
