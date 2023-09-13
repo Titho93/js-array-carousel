@@ -21,3 +21,4 @@ imageCollect[counterImg].classList.remove('hide');
 
 
 
+
