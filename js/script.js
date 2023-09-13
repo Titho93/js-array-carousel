@@ -2,6 +2,8 @@ const imageCont  = document.querySelector('.imageCont');
 const btnNext = document.querySelector('.down');
 const btnPrev = document.querySelector('.up');
 
+btnPrev.classList.add('hide');
+
 let counterImg = 0;
 
 const images  = [
@@ -24,10 +26,22 @@ btnNext.addEventListener('click', function(){
   imageCollect[counterImg].classList.add('hide');
   counterImg++;
   imageCollect[counterImg].classList.remove('hide');
+  btnPrev.classList.remove('hide');
+
+  if(counterImg === imageCollect.length - 1){
+    btnNext.classList.add('hide');
+  }
+
 })
 
 btnPrev.addEventListener('click', function(){
   imageCollect[counterImg].classList.add('hide');
   counterImg--;
   imageCollect[counterImg].classList.remove('hide');
+
+  btnNext.classList.remove('hide')
+
+  if(counterImg === 0){
+    btnPrev.classList.add('hide');
+  }
 })
