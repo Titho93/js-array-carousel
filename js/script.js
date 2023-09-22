@@ -1,6 +1,7 @@
 const imageCont  = document.querySelector('.imageCont');
 const btnNext = document.querySelector('.down');
 const btnPrev = document.querySelector('.up');
+const thumb = document.querySelector('.thumb');
 
 btnPrev.classList.add('hide');
 
@@ -11,12 +12,14 @@ const images  = [
   'img/02.webp',
   'img/03.webp',
   'img/04.webp',
+  'img/05.webp'
 ];
 
 for (let i = 0; i < images.length; i++){
   const image = images[i];
   imageCont.innerHTML += `<img src="${image}" class="item hide">`;
 }
+
 
 const imageCollect = document.getElementsByClassName('item');
 
@@ -27,7 +30,7 @@ btnNext.addEventListener('click', function(){
   counterImg++;
   imageCollect[counterImg].classList.remove('hide');
   btnPrev.classList.remove('hide');
-
+  
   if(counterImg === imageCollect.length - 1){
     btnNext.classList.add('hide');
   }

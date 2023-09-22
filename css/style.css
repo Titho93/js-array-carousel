@@ -15,16 +15,24 @@ main {
 .container {
   width: 60%;
   height: 60%;
-  margin: 0 auto;
   background-color: red;
 }
 
 .slider {
+  display: flex;
   height: 100%;
+  width: 100%;
+}
+
+.thumb {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
   position: relative;
 }
 
 .imageCont {
+  width: 80%;
   height: 100%;
 }
 
@@ -32,14 +40,6 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-img:first-child {
-  object-position: 0px -350px;
-}
-
-img:nth-child(2) {
-  object-position: 0px -350px;
 }
 
 .hide {
@@ -65,4 +65,13 @@ img:nth-child(2) {
 
 .btn.down {
   bottom: 10px;
+}
+
+.thumb img {
+  filter: brightness(0.3);
+}
+
+.thumb .active {
+  border: 3px solid white;
+  filter: none;
 }
